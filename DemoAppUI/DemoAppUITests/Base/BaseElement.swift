@@ -24,9 +24,9 @@ extension XCUIElement {
     /// - Parameter text: "Text to be typed into the text field"
     func sendKeys(_ text: String) -> Void {
         self.click()
-//        if (self.buttons["Clear text"].exists && self.buttons["Clear text"].isHittable)  {
-//            self.buttons["Clear text"].tap()
-//        }
+        //        if (self.buttons["Clear text"].exists && self.buttons["Clear text"].isHittable)  {
+        //            self.buttons["Clear text"].tap()
+        //        }
         //        self.click()
         self.typeText(text)
     }
@@ -52,11 +52,11 @@ extension XCUIElement {
         if(self.exists && self.isHittable && self.isEnabled){
             self.tap()
         }
-            
+        
         else if(self.exists && !(self.isHittable && self.isEnabled)){
             XCTFail("The Element >>"+self.description+"<< exists in the dom but it is not visible on the screen")
         }
-            
+        
         else if(!self.exists){
             verifyEnabled(fMsg: "The Element >>"+self.description+"<< is not present on the screen.")
             //            \n Please check the screenshots in this folder "+ScreenshotUtil().getScreenshotFolderPath().standardizedFileURL.absoluteString)
@@ -80,9 +80,13 @@ extension XCUIElement {
     ///
     /// - Parameter screenShotName: The name of the screenshot
     func screenShot(_ screenShotName: String){
-        let fileName = ScreenshotUtil().getScreenshotFolderPath().appendingPathComponent(screenShotName+self.description+".png")
-        try? UIImagePNGRepresentation(self.screenshot().image)?.write(to: fileName, options: .atomic)
-        
+//        let fileName = ScreenshotUtil().getScreenshotFolderPath().appendingPathComponent(screenShotName+self.description+".png")
+//        try? UIImage.pngData(self.screenshot().image).()write(to: fileName, options: .atomic)
+        let fullScreenshot = XCUIScreen.main.screenshot()
+          let screenshot = XCTAttachment(screenshot: fullScreenshot)
+
+          screenshot.lifetime = .keepAlways
+//          add(screenshot)
     }
     
     

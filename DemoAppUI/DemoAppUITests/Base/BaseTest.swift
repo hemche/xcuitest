@@ -15,8 +15,7 @@ class BaseTest: XCTestCase {
     
     
     /**Base Set Up Method for all Tests**/
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
         continueAfterFailure = false
         if(app.exists){ app.terminate() }
         app.activate()
@@ -24,13 +23,11 @@ class BaseTest: XCTestCase {
     
     
     /**After Test Method**/
-    override func tearDown(){
+    override func tearDownWithError() throws{
         if(getTestRunStatus() > 0){
-            //            printHierarchy()
             screenshot.saveScreenshot(screenShotName:getScreenShotName())
         }
         app.terminate()
-        super.tearDown()
     }
     
     /** This method can be used in any of the tests to print the page source**/
