@@ -4,7 +4,6 @@
 
 `cd DemoAppUI`
 
-`
 `xcodebuild -scheme "your scheme name without enclosing quotes" -sdk iphonesimulator -destination "platform=iOS Simulator,name="The exact Device name without enclosing quotes",OS="Exact iOS version without enclosing quotes"" clean test`
 
 **Command to run all the tests in a Scheme named "AllTests" on iPhone 14 Pro/iOS 16.2 simulator**
