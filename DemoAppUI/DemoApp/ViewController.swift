@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showMessage(sender: UIButton) {
-        let alertController = UIAlertController(title: "This is a Dummy App", message: "Peace to All!", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        let alertController = UIAlertController(title: "This is a Dummy App", message: "Peace to All!", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
 }

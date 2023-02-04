@@ -18,6 +18,13 @@
 	<string>1.0</string>
 	<key>ProjectPath</key>
 	<string>$(PROJECT_DIR)</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UISceneConfigurations</key>
+		<dict/>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+	</dict>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
